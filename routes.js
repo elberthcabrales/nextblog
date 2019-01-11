@@ -8,3 +8,4 @@ module.exports = routes()
 .add('blogEditor', '/blogs/new')
 .add('blogDetail', '/blogs/:slug')
 .add('blogEditorUpdate', '/blogs/:id/edit')
+

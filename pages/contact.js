@@ -15,7 +15,7 @@ class About extends React.Component {
           <div className="overlay"></div>
         
         </div>
-        <BasePage className="portfolio-page" title="Blogs">
+        <BasePage className="portfolio-page" title="contact">
 
 
         </BasePage>

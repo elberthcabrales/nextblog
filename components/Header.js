@@ -6,13 +6,9 @@ import {
   NavbarToggler,
   NavbarBrand,
   Nav,
-  NavItem,
-  Dropdown,
-  DropdownItem,
-  DropdownToggle,
-  DropdownMenu} from 'reactstrap';
+  NavItem} from 'reactstrap';
 
-
+  
 const BsNavLink = (props) => {
   const { route, title } = props;
   const className = props.className || "";
@@ -59,18 +55,21 @@ export default class Header extends React.Component {
     return (
       <div>
         <Navbar className={`port-navbar port-nav-base absolute ${className} ${menuOpenClass}`} color="transparent" dark expand="md">
-           <NavbarBrand className="port-navbar-brand" href="/">elberth cabrales</NavbarBrand> 
+          <NavbarBrand className="port-navbar-brand" href="/">elberth cabrales</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem className="port-navbar-item">
-                <BsNavLink route="/index" title="Home" />
+                <BsNavLink route="/" title="Home" />
               </NavItem>
               <NavItem className="port-navbar-item">
                 <BsNavLink route="/about" title="About" />
               </NavItem>       
               <NavItem className="port-navbar-item">
                 <BsNavLink route="/services" title="Services" />
+              </NavItem>  
+              <NavItem className="port-navbar-item">
+                <BsNavLink route="/contact" title="Contact" />
               </NavItem>   
             </Nav>
           </Collapse>
