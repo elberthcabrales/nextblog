@@ -2,7 +2,19 @@ import React from 'react';
 import Header from '../components/Header';
 import Head from 'next/head';
 
-import { Container, Row,  } from 'reactstrap';
+import { Container, Row, } from 'reactstrap';
+
+
+import Router from "next/router";
+import NProgress from "nprogress";
+
+Router.onRouteChangeStart = url => {
+  console.log(url);
+  NProgress.start();
+};
+
+Router.onRouteChangeComplete = () => NProgress.done();
+Router.onRouteChangeError = () => NProgress.done();
 
 
 const BaseLayout = (props) => {
@@ -20,7 +32,13 @@ const BaseLayout = (props) => {
         <meta property="og:type" content="website" />
         <meta property="og:description" content="My name is Filip Jerga and I am an experienced software engineer and freelance developer." />
         <link rel="icon" type="image/ico" href="/static/favicon.ico" />
+        
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css"
+        />
+      
       </Head>
       <div className="layout-container" >
         <Header className={`port-nav-${headerType}`} />
@@ -42,7 +60,7 @@ const BaseLayout = (props) => {
                         </a>
                       </li>
                       <li className="list-inline-item">
-                        <a target="_blank" href="https://github.com/Jerga99">
+                        <a target="_blank" href="https://github.com/elberthcabrales">
                           <span className="fa-stack fa-lg">
                             <i className="fas fa-circle fa-stack-2x"></i>
                             <i className="fab fa-github fa-stack-1x fa-inverse"></i>
