@@ -3,12 +3,32 @@ import BaseLayout from '../layouts/BaseLayout';
 import BasePage from '../components/BasePage';
 import ListPosts from '../components/ListPosts'
 
-import { Container, Row, Col } from 'reactstrap';
+import { Container, Button } from 'reactstrap';
 
 
 class Index extends React.Component {
 
+  constructor(props) {
+    super(props);
 
+    const start = 1;
+    const limit = 10;
+
+    this.state = {
+      start,
+      limit
+    };
+
+    this.handleOlder = this.handleOlder.bind(this);
+  }
+  handleOlder() {
+   
+    this.setState({
+      start: (this.state.start >1 )? this.state.start-1:1
+    });
+    
+   
+  }
 
   render() {
     const { blogs } = this.props;
@@ -34,11 +54,13 @@ class Index extends React.Component {
         </div>
         <BasePage className="blog-body" title="Blogs">
           <Container>
-            <ListPosts></ListPosts>
-            <div className="clearfix">
-              <a className="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
-            </div>
+            <ListPosts start={this.state.start} limit={this.state.limit}></ListPosts>
           </Container>
+          <div className="clearfix">
+              <Button className="float">newer Posts &larr;</Button>
+              
+              <Button className="float-right" onClick={() => this.handleOlder()}>Older Posts &rarr;</Button>
+            </div>
         </BasePage>
 
       </BaseLayout>

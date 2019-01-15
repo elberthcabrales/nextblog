@@ -9,18 +9,28 @@
   }
 
   .post-preview {
+    .post-title-linked {
+      font-size: 30px;
+      margin-top: 30px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      cursor: pointer;
+      color:#304051;
+    }
     > a {
       color: $gray-900;
       &:focus,
       &:hover {
         text-decoration: none;
         color: $primary;
+        
       }
       > .post-title {
         font-size: 30px;
         margin-top: 30px;
         font-weight: 700;
         margin-bottom: 10px;
+        
       }
       > .post-subtitle {
         font-weight: 300;
