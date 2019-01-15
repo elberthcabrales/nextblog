@@ -1,7 +1,7 @@
 import React from 'react';
 import BaseLayout from '../layouts/BaseLayout';
 import BasePage from '../components/BasePage';
-import Post from '../components/Post'
+import ListPosts from '../components/ListPosts'
 
 import { Container, Row, Col } from 'reactstrap';
 
@@ -34,7 +34,7 @@ class Index extends React.Component {
         </div>
         <BasePage className="blog-body" title="Blogs">
           <Container>
-            <Post></Post>
+            <ListPosts></ListPosts>
             <div className="clearfix">
               <a className="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
             </div>
