@@ -1,7 +1,7 @@
 import React from 'react';
 import BaseLayout from '../layouts/BaseLayout';
 import BasePage from '../components/BasePage';
-import { Container, Row, Col , Button} from 'reactstrap';
+import { Container, Row, Col, Button } from 'reactstrap';
 import { getBlogBySlug } from '../actions';
 import Markdown from 'react-markdown';
 import Prism from 'prismjs';
@@ -12,7 +12,7 @@ import 'prismjs/components/prism-powershell';
 import 'prismjs/components/prism-python';
 import 'prismjs/components/prism-java'
 import 'prismjs/themes/prism-okaidia.css';
-import Router from 'next/router'
+import Link from "next/link";
 import Error from './_error';
 
 
@@ -21,11 +21,11 @@ class Post extends React.Component {
     super(props)
   }
 
-  static async getInitialProps({query}) {
+  static async getInitialProps({ query }) {
     try {
       const post = await getBlogBySlug(query.title);
-
-      return {post}
+      const page = query.page;
+      return { post, page }
     } catch (err) {
       console.error(err);
     }
@@ -37,14 +37,14 @@ class Post extends React.Component {
     Prism.highlightAll()
   }
 
-  render() {  
-   if(this.props.post===undefined){
-    return <Error status={404} />;
-   }
+  render() {
+    if (this.props.post === undefined) {
+      return <Error status={404} />;
+    }
     return (
       <BaseLayout
         className="blog-listing-page"
-        title="Filip Jerga - Newest Blogs to Read">
+        title={this.props.post.title}>
         <BasePage className="portfolio-page" title="Blogs">
           <Container>
             <Row>
@@ -64,7 +64,10 @@ class Post extends React.Component {
               </Col>
             </Row>
             <div className="clearfix">
-              <Button color="warning floa-left" onClick={() => Router.back()}>Back &larr;</Button>
+              <Link href={`/?page=${this.props.page}`}>
+                <Button color="warning floa-left">Back &larr;</Button>
+              </Link>
+
             </div>
           </Container>
         </BasePage>

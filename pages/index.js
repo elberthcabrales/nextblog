@@ -1,38 +1,16 @@
 import React from 'react';
 import BaseLayout from '../layouts/BaseLayout';
 import BasePage from '../components/BasePage';
-import ListPosts from '../components/ListPosts'
-
-import { Container, Button } from 'reactstrap';
-
+import ListPosts from '../components/Posts/ListPosts'
+import { Container } from 'reactstrap';
 
 class Index extends React.Component {
-
-  constructor(props) {
-    super(props);
-
-    const start = 1;
-    const limit = 10;
-
-    this.state = {
-      start,
-      limit
-    };
-
-    this.handleOlder = this.handleOlder.bind(this);
+ 
+  static getInitialProps({ query }) {
+      const page = query.page;
+      return {page}
   }
-  handleOlder() {
-   
-    this.setState({
-      start: (this.state.start >1 )? this.state.start-1:1
-    });
-    
-   
-  }
-
   render() {
-    const { blogs } = this.props;
-
     return (
       <BaseLayout
         headerType={'landing'}
@@ -54,13 +32,8 @@ class Index extends React.Component {
         </div>
         <BasePage className="blog-body" title="Blogs">
           <Container>
-            <ListPosts start={this.state.start} limit={this.state.limit}></ListPosts>
+            <ListPosts currentPage={this.props.page}></ListPosts>
           </Container>
-          <div className="clearfix">
-              <Button className="float">newer Posts &larr;</Button>
-              
-              <Button className="float-right" onClick={() => this.handleOlder()}>Older Posts &rarr;</Button>
-            </div>
         </BasePage>
 
       </BaseLayout>
