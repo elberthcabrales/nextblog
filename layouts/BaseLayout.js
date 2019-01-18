@@ -43,7 +43,7 @@ const BaseLayout = (props) => {
       <div className="layout-container" >
         <Header className={`port-nav-${headerType}`} />
         <main className={`${className}`}>
-          <div className="wrapper">
+
             {children}
 
             <footer>
@@ -78,7 +78,6 @@ const BaseLayout = (props) => {
                 @import url("https://use.fontawesome.com/releases/v5.5.0/css/all.css");
               `}
             </style>
-          </div>
         </main>
       </div>
 
