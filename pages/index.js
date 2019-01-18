@@ -15,7 +15,7 @@ class Index extends React.Component {
       <BaseLayout
         headerType={'landing'}
         className="blog-listing-page"
-        title="Filip Jerga - Newest Blogs to Read">
+        title="Blog">
         <div className="masthead" style={{ "backgroundImage": "url('/static/images/home-bg.jpg')" }}>
           <div className="overlay"></div>
           <Container>

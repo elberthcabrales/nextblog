@@ -35,7 +35,7 @@ class About extends React.Component {
     return (
       <BaseLayout
         className="blog-listing-page"
-        title="Filip Jerga - Newest Blogs to Read">
+        title="Contact">
         <BasePage className="portfolio-page" title="contact">
           <Container>
             <Alert color="info" isOpen={this.state.visible} toggle={this.onDismiss}>
@@ -67,8 +67,7 @@ class About extends React.Component {
                   <FormGroup row>
                     <Col sm={10}>
                       <FormText color="muted">
-                        This is some placeholder block-level help text for the above input.
-                        It's a bit lighter and easily wraps to a new line.
+                      Thanks for wanting to get in touch with me!
                     </FormText>
                     </Col>
                   </FormGroup>

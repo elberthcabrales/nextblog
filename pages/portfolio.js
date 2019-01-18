@@ -12,39 +12,50 @@ class About extends React.Component {
       <BaseLayout
         className="blog-listing-page"
         title="Filip Jerga - Newest Blogs to Read">
-        <div className="masthead" style={{ "backgroundImage": "url('/static/images/contact-bg.jpg')" }}>
-          <div className="overlay"></div>
-
-        </div>
-        <BasePage className="portfolio-page" title="Blogs">
+        <BasePage className="portfolio-page" title="Portfolio">
           <Container>
             <Row>
               <Col sm="6">
                 <Card body className="mar-buttom">
-                  <CardTitle>Special Title Treatment</CardTitle>
-                  <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
-                  <Button>Go somewhere</Button>
+                  <CardTitle>Hotel CMS with laravel</CardTitle>
+                  <CardText>I colaborate in CMS </CardText>
+                 
                 </Card>
               </Col>
               <Col sm="6">
                 <Card body className="mar-buttom">
-                  <CardTitle>Special Title Treatment</CardTitle>
-                  <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
-                  <Button>Go somewhere</Button>
+                  <CardTitle>Erp with Django</CardTitle>
+                  <CardText>Simple erp with point of sale and crm</CardText>
                 </Card>
               </Col>
               <Col sm="6">
                 <Card body className="mar-buttom">
-                  <CardTitle>Special Title Treatment</CardTitle>
-                  <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
-                  <Button>Go somewhere</Button>
+                  <CardTitle>Paymente departament SEJ</CardTitle>
+                  <CardText>automation in process requiered</CardText>
                 </Card>
               </Col>
               <Col sm="6">
                 <Card body className="mar-buttom">
-                  <CardTitle>Special Title Treatment</CardTitle>
-                  <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
-                  <Button>Go somewhere</Button>
+                  <CardTitle>CMS in nextjs for collages</CardTitle>
+                  <CardText>I create an cms with server side rendering and nodejs</CardText>
+                </Card>
+              </Col>
+              <Col sm="6">
+                <Card body className="mar-buttom">
+                  <CardTitle>Aplication of change coins</CardTitle>
+                  <CardText>Aplication with angular 1 and laravel php</CardText>
+                </Card>
+              </Col>
+              <Col sm="6">
+                <Card body className="mar-buttom">
+                  <CardTitle>Poin of sale in java swing</CardTitle>
+                  <CardText>Java Swing with ORM hibernate</CardText>
+                </Card>
+              </Col>
+              <Col sm="6">
+                <Card body className="mar-buttom">
+                  <CardTitle>Poin of sale in java swing</CardTitle>
+                  <CardText>Java Swing with ORM hibernate</CardText>
                 </Card>
               </Col>
             </Row>
