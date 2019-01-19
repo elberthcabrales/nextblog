@@ -5,8 +5,6 @@
 
 # testing
 /coverage
-#statics
-/static
 #output
 .next/*
 # production
